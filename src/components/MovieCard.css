@@ -1,0 +1,18 @@
+.movie-card {
+    width: 200px;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .movie-card h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+  }
+  
+  .movie-card p {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+  }
