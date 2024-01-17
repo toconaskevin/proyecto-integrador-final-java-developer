@@ -1,19 +1,25 @@
-import React from 'react';
+import { useState } from 'react'
 import './SearchBar.css';
 
-const SearchBar = ({ onSearch }) => {
-    const handleSearch = (event) => {
-        if (event.key === 'Enter') {
-            onSearch(event.target.value);
-        }
-    };
+function SearchBar({ onSearch }) {
+  const [term, setTerm] = useState('')
 
-    return (
-        <div className="search-container">
-            <input type="text" className="search-input" placeholder="Buscar..." onKeyDown={handleSearch} />
-            <button type="submit" className="search-button" onClick={() => onSearch(document.querySelector('.search-input').value)}>Buscar</button>
-        </div>
-    );
-};
+  const handleChange = (event) => {
+    setTerm(event.target.value)
+    onSearch(event.target.value)
+  }
 
-export default SearchBar;
+  return (
+    <div className='search-container'>
+      <input
+        type="text"
+        className="search-input"
+        placeholder="¿Qué pelicula estás buscando?"
+        value={term}
+        onChange={handleChange}
+      />
+    </div>
+  )
+}
+
+export default SearchBar
